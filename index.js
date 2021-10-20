@@ -21,8 +21,6 @@ function init(){
     renderer.toneMappingExposure=2.7;
     renderer.setSize( canvasdiv.offsetWidth, canvasdiv.offsetHeight );
     renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    console.log(canvasdiv.offsetWidth)
-    console.log(canvasdiv.offsetHeight)
 
     // CAMERA
     camera = new THREE.PerspectiveCamera( 75, canvasdiv.offsetWidth / canvasdiv.offsetHeight, 0.1, 1000 );
@@ -104,9 +102,9 @@ function init(){
 
 function windowResize(){
     camera.aspect=canvasdiv.offsetWidth/canvasdiv.offsetHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(canvasdiv.offsetWidth,canvasdiv.offsetHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    camera.updateProjectionMatrix();
+    renderer.setSize(canvasdiv.offsetWidth,canvasdiv.offsetHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
     window.addEventListener('resize', windowResize, false)
 }
 
