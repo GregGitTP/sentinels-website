@@ -49,17 +49,12 @@ function init(){
     spotlight=new THREE.SpotLight(0xffffff,4);
     scene.add(spotlight);
 
-    //SPHERE
-    // material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
-    // geometry = new THREE.SphereGeometry(15,100,100);
-    // world = new THREE.Line( geometry, material );
-    // scene.add( world );
-
     // MODEL
     loader=new GLTFLoader();
     loader.load('./mostbeautifulworld.glb',function(glb){
         world=glb.scene;
         world.rotation.y=91;
+        world.position.set(80,0,0);
         scene.add(world);
         animate();
     }, undefined,  function(err){
